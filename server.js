@@ -1,11 +1,13 @@
 const http = require('http');
-const fileSystem = require('fs');
+const fs = require('fs');
 const path = require('path');
+const port = 3009;
 
 const server = http.createServer((request, response) => {
   const filePath = path.join(__dirname, '/doc.html')
 
-  fileSystem.readFile(filePath, 'utf8', (error, data) => {
+  //.readFile(path, encoding, callback) if encoding is left out a raw buffer is returned
+  fs.readFile(filePath, 'utf8', (error, data) => {
     if (error) {
       throw error;
     }
@@ -14,4 +16,5 @@ const server = http.createServer((request, response) => {
   })
 });
 
-server.listen(3009);
+console.log(`Server running on ${port}`);
+server.listen(port);
