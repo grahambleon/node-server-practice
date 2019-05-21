@@ -1,0 +1,8 @@
+{
+  "name": "brendserver",
+  "version": "1.0",
+  "description": "what am I doing with my life.",
+  "engines": {
+    "node": "v12.1.0"
+  }
+}
